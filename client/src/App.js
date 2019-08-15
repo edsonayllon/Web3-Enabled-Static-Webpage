@@ -5,20 +5,23 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Welcome to the world's first decntralized arts organization.</h1>
+
+        <p>What makes something original?</p>
+        <input type="text" />
+
+        <a className="button">Join</a>
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Your donation, along with your answer above will be interpreted by the
+          Ethereum Virtual Machine and used to generate a verifiably unique
+          and digitally-rare art piece that will belong to you
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          This token establishes you as one of the founding patrons of
+        </p>
+        <h2 className="daovinchi">DAO VINCI</h2>
+
     </div>
   );
 }
