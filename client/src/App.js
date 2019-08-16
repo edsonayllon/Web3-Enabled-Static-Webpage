@@ -14,10 +14,14 @@ function App() {
     let accounts = await window.ethereum.enable();
     let account = await accounts[0]
     let hash = await web3.utils.keccak256(message);
-    let contractAddr = '0xDB20352830a438c0802dd14F987a55Ea8899A690';
+    let num = await web3.utils.toBN(hash).toString();
+
+    let contractAddr = '0x4c248783AF68C230a431A58f68C5a764FB888b3C';
     let VinciContract = new web3.eth.Contract(abi, contractAddr);
-    let gas = await VinciContract.methods.createArt(hash).estimateGas();
-    let result = await VinciContract.methods.createArt(hash).send({ from: account, gas }, (err, result) => {
+
+    console.log(num);
+    let gas = await VinciContract.methods.createArt(num);
+    let result = await VinciContract.methods.createArt(num).send({ from: account }, (err, result) => {
       console.log(result);
       if (err) {
         console.log('error: ' + err);
